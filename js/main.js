@@ -2,11 +2,11 @@
     let tableCont = [
         {
             label: "Week1 notes",
-            url: "week1/index.html"
+            url: "week01/index.html"
         },
         {
             label: "Week2 notes",
-            url: "week2/index.html"
+            url: "week02/index.html"
         }
     ];
 
