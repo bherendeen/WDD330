@@ -3,10 +3,6 @@
         {
             label: "Week01 code",
             url: "week01/index.html"
-        },
-        {
-            label: "Week02 notes",
-            url: "week02/index.html"
         }
     ];
 
