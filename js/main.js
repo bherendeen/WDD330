@@ -1,7 +1,7 @@
 (function() {
     let tableCont = [
         {
-            label: "Week01 notes",
+            label: "Week01 code",
             url: "week01/index.html"
         },
         {
