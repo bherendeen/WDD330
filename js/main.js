@@ -1,4 +1,4 @@
-(function() {
+(function () {
     let tableCont = [
         {
             label: "Week01 code",
@@ -18,5 +18,5 @@
     
     function myFunction(tableCont) {
         parentTag += `<li><a href="${tableCont.url}" target="_blank" rel="noopener noreferrer">${tableCont.label}</a></li>`;
-}
+    }
 }());
