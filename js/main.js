@@ -17,6 +17,6 @@
     document.getElementById("contDisp").innerHTML = parentTag;
     
     function myFunction(tableCont) {
-        parentTag += `<li><a href="${tableCont.url}" target="_blank" rel="noopener noreferrer">${tableCont.label}</a> ${tableCont.label}</li>`;
+        parentTag += `<li><a href="${tableCont.url}" target="_blank" rel="noopener noreferrer">${tableCont.label}</a></li>`;
 }
 }());
