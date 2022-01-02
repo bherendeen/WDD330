@@ -1,0 +1,48 @@
+:root {
+    // primary color 
+    --color-primary-lighter: rgb(19, 172, 180);
+    --color-primary-light: rgb(14, 128, 134);
+    --color-primary: rgb(9, 84, 88);
+    --color-primary-dark: rgb(4, 40, 42);
+    --color-primary-darker: rgb(0, 0, 0);
+
+    // accent color 
+    --color-accent-lighter: rgb(238, 159, 145);
+    --color-accent-light: rgb(231, 120, 101);
+    --color-accent: rgb(224, 82, 56);
+    --color-accent-dark: rgb(199, 56, 31);
+    --color-accent-darker: rgb(154, 44, 24);
+
+    // general color 
+    --color-black: rgb(0, 0, 0);
+    --color-white: rgb(255, 255, 255);
+
+    // contrast 
+    --color-bg: var(--color-white);
+    --color-contrast-lower: rgb(242, 242, 242);
+    --color-contrast-low: rgb(211, 211, 211);
+    --color-contrast-medium: rgb(121, 121, 121);
+    --color-contrast-high: rgb(49, 49, 49);
+    --color-contrast-higher: rgb(34, 34, 34);
+
+    // success color
+    --color-success-lighter: rgb(190, 223, 164);
+    --color-success-light: rgb(163, 210, 127);
+    --color-success: rgb(136, 197, 89);
+    --color-success-dark: rgb(110, 174, 61);
+    --color-success-darker: rgb(86, 136, 48);
+
+    // error color
+    --color-error-lighter: rgb(237, 126, 146);
+    --color-error-light: rgb(230, 81, 108);
+    --color-error: rgb(224, 36, 71);
+    --color-error-dark: rgb(183, 26, 55);
+    --color-error-darker: rgb(138, 20, 42);
+
+    // warning color
+    --color-warning-lighter: rgb(255, 232, 158);
+    --color-warning-light: rgb(255, 220, 107);
+    --color-warning: rgb(255, 209, 56);
+    --color-warning-dark: rgb(255, 197, 5);
+    --color-warning-darker: rgb(209, 160, 0);
+}
