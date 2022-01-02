@@ -643,7 +643,7 @@ td {
   margin-top: var(--space-lg);
   padding: var(--space-lg);
   color: var(--color-white);
-  background-color: var(--color-primary);
+  background-color: var(--color-black);
 }
 
 .grid-full main {
