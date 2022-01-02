@@ -234,6 +234,13 @@ svg {
 }
 
 :root {
+  --radius: 0.25em;
+  --radius-sm: calc(var(--radius)/2);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius)*2);
+}
+
+:root {
   --font-primary: 'Roboto', sans-serif;
   --font-secondary: serif;
   --font-mono: 'Roboto Mono', monospace;
@@ -628,6 +635,104 @@ td {
   text-align: center !important;
 }
 
+:root {
+  --btn-font-size: 1em;
+  --btn-padding-x: var(--space-sm);
+  --btn-padding-y: var(--space-xxs);
+  --btn-radius: var(--radius-md);
+}
+
+.btn {
+  background: var(--color-bg-dark);
+  color: var(--color-contrast-higher);
+  padding: var(--space-sm);
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  will-change: transform;
+}
+
+.btn:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px var(--color-contrast-higher), 0.15;
+          box-shadow: 0px 0px 0px 2px var(--color-contrast-higher), 0.15;
+  outline: none;
+}
+
+.btn:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  -webkit-box-shadow: inset 0px 1px 0px var(--color-white), 0.15, var(--shadow-xs);
+          box-shadow: inset 0px 1px 0px var(--color-white), 0.15, var(--shadow-xs);
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-light);
+  -webkit-box-shadow: inset 0px 1px 0px var(--color-white), 0.15, var(--shadow-sm);
+          box-shadow: inset 0px 1px 0px var(--color-white), 0.15, var(--shadow-sm);
+}
+
+.btn--primary:focus {
+  -webkit-box-shadow: inset 0px 1px 0px var(--color-white), 0.15, 0px 0px 0px 2px var(--color-primary), 0.2;
+          box-shadow: inset 0px 1px 0px var(--color-white), 0.15, 0px 0px 0px 2px var(--color-primary), 0.2;
+}
+
+.btn--subtle {
+  background: var(--color-bg-light);
+  color: var(--color-contrast-higher);
+  -webkit-box-shadow: inset 0px 0px 0px 1px var(--color-contrast-lower), var(--shadow-xs);
+          box-shadow: inset 0px 0px 0px 1px var(--color-contrast-lower), var(--shadow-xs);
+}
+
+.btn--subtle:hover {
+  background: var(--color-bg-lighter);
+  -webkit-box-shadow: inset 0px 0px 0px 1px var(--color-contrast-lower), var(--shadow-sm);
+          box-shadow: inset 0px 0px 0px 1px var(--color-contrast-lower), var(--shadow-sm);
+}
+
+.btn--subtle:focus {
+  -webkit-box-shadow: inset 0px 0px 0px 1px var(--color-contrast-lower), 0px 0px 0px 2px var(--color-contrast-higher), 0.05;
+          box-shadow: inset 0px 0px 0px 1px var(--color-contrast-lower), 0px 0px 0px 2px var(--color-contrast-higher), 0.05;
+}
+
+.btn--accent {
+  background: var(--color-accent);
+  color: var(--color-white);
+  -webkit-box-shadow: inset 0px 1px 0px var(--color-white), 0.15, var(--shadow-xs);
+          box-shadow: inset 0px 1px 0px var(--color-white), 0.15, var(--shadow-xs);
+}
+
+.btn--accent:hover {
+  background: var(--color-accent-light);
+  -webkit-box-shadow: inset 0px 1px 0px var(--color-white), 0.15, var(--shadow-sm);
+          box-shadow: inset 0px 1px 0px var(--color-white), 0.15, var(--shadow-sm);
+}
+
+.btn--accent:focus {
+  -webkit-box-shadow: inset 0px 1px 0px var(--color-white), 0.15, 0px 0px 0px 2px var(--color-accent), 0.2;
+          box-shadow: inset 0px 1px 0px var(--color-white), 0.15, 0px 0px 0px 2px var(--color-accent), 0.2;
+}
+
+.btn--sm {
+  font-size: 0.8em;
+}
+
+.btn--md {
+  font-size: 1.2em;
+}
+
+.btn--lg {
+  font-size: 1.4em;
+}
+
 .grid-full {
   display: -ms-grid;
   display: grid;
@@ -650,9 +755,67 @@ td {
   -ms-grid-column: 2;
   -ms-grid-column-span: 10;
   grid-column: 2 / 12;
+  margin-bottom: var(--space-lg);
 }
 
 .grid-full main ol {
   margin-left: var(--space-lg);
+}
+
+.grid-full main section {
+  padding: var(--space-lg);
+}
+
+.grid-full main p {
+  padding: var(--space-md) 0 var(--space-md) 0;
+}
+
+.grid-full main code {
+  background-color: var(--color-contrast-lower);
+  font-family: monospace;
+  padding: var(--space-xxxxs) var(--space-xxxs);
+  border-radius: var(--radius-md);
+}
+
+.grid-full main code::-moz-selection {
+  background-color: var(--color-contrast-high);
+  color: var(--color-bg);
+}
+
+.grid-full main code::selection {
+  background-color: var(--color-contrast-high);
+  color: var(--color-bg);
+}
+
+.grid-full code {
+  background-color: var(--color-contrast-lower);
+  font-family: monospace;
+  padding: var(--space-xxxxs) var(--space-xxxs);
+  border-radius: var(--radius-md);
+}
+
+.grid-full code::-moz-selection {
+  background-color: var(--color-contrast-high);
+  color: var(--color-bg);
+}
+
+.grid-full code::selection {
+  background-color: var(--color-contrast-high);
+  color: var(--color-bg);
+}
+
+.code-snippet {
+  background-color: var(--color-bg-dark);
+  border-radius: var(--radius-md);
+  margin: var(--space-md) 0 var(--space-md) 0;
+}
+
+.code-snippet code {
+  background-color: transparent;
+  line-height: 1.45;
+  font-size: var(--text-sm);
+  display: block;
+  padding: var(--space-md);
+  overflow-x: auto;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -9,7 +9,74 @@
 </head>
 
 <body>
+    <div class="grid-full">
+        <header class="main-header">
+            <h1>WDD330 | Week 01</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Questions</h2>
+                <p>I see in the reading of 'Doing Stuff with Web Things' a <code>localStorage.setItem</code> and
+                    <code>localStorage.getItem</code>, but is there a way to remove items in local storage?</p>
+            </section>
+            <section>
+                <h2>Code Example</h2>
+                <pre class="code-snippet"><code>
+&lt;!doctype html&gt;
+&lt;html&gt;
 
+&lt;head&gt;
+    &lt;title&gt;Story Writer&lt;/title&gt;
+    &lt;script&gt;
+        function loadStory() {
+            var storyName = document.getElementById(“name_input”).value
+            var storyHTML = localStorage.getItem(storyName)
+            document.getElementById(“story_editor”).value = storyHTML
+        }
+
+        function saveStory() {
+            var storyName = document.getElementById(“name_input”).value
+            var storyHTML = document.getElementById(“story_editor”).value
+            localStorage.setItem(storyName, storyHTML)
+        }
+
+        function dsiplayStory() {
+
+            var storyHTML = document.getElementById(“story_editor”).value
+            document.getElementById(“story_display”).innerHTML = storyHTML
+
+        }
+    &lt;/script&gt;
+
+    &lt;style&gt;
+        textarea {
+            width: 800px;
+            height: 250px;
+            background-color: lightyellow;
+
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Story Editor&lt;/h1&gt;
+    Story Name:&lt;input id=name_input&gt;&lt;/input&gt;
+    &lt;section&gt;
+        &lt;button onclick="loadStory()"&gt;Find and Edit It&lt;/button&gt;
+        &lt;button onclick="saveStory()"&gt;Save It&lt;/button&gt;
+        &lt;button onclick="displayStory()"&gt;Display It&lt;/button&gt;
+    &lt;/section&gt;
+    &lt;textarea id="story_editor" placeholder="Write a totally awesome story here."&gt;&lt;/textarea&gt;
+    &lt;section id="story_display"&gt;&lt;/section&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+
+                <a href="result.html"><button class="btn btn--primary">Result of Code</button></a>
+            </section>
+        </main>
+    </div>
     <script src="../js/main.js"></script>
 </body>
 
