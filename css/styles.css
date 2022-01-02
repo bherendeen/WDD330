@@ -638,8 +638,8 @@ td {
 
 .grid-full header {
   -ms-grid-column: 2;
-  -ms-grid-column-span: 9;
-  grid-column: 2 / 11;
+  -ms-grid-column-span: 10;
+  grid-column: 2 / 12;
   margin-top: var(--space-lg);
   padding: var(--space-lg);
   color: var(--color-white);
@@ -648,8 +648,8 @@ td {
 
 .grid-full main {
   -ms-grid-column: 2;
-  -ms-grid-column-span: 9;
-  grid-column: 2 / 11;
+  -ms-grid-column-span: 10;
+  grid-column: 2 / 12;
 }
 
 .grid-full main ol {
