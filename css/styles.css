@@ -651,4 +651,8 @@ td {
   -ms-grid-column-span: 9;
   grid-column: 2 / 11;
 }
+
+.grid-full main ol {
+  padding-left: var(--space-md);
+}
 /*# sourceMappingURL=styles.css.map */

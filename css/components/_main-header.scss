@@ -13,5 +13,9 @@
 
     main {
         grid-column: 2 / 11;
+
+        ol {
+            padding-left: var(--space-md);
+        }
     }
 }
