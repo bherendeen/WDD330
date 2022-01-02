@@ -439,7 +439,7 @@ ol li {
 
 ul,
 ol {
-  list-style-position: outside;
+  list-style-position: inside;
 }
 
 ul {
@@ -626,5 +626,29 @@ td {
 
 .text-center {
   text-align: center !important;
+}
+
+.grid-full {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(0, 8.3333%))[12];
+      grid-template-columns: repeat(12, minmax(0, 8.3333%));
+  gap: var(--space-sm);
+}
+
+.grid-full header {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 9;
+  grid-column: 2 / 11;
+  margin-top: var(--space-lg);
+  padding: var(--space-lg);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.grid-full main {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 9;
+  grid-column: 2 / 11;
 }
 /*# sourceMappingURL=styles.css.map */
