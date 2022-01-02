@@ -439,7 +439,7 @@ ol li {
 
 ul,
 ol {
-  list-style-position: inside;
+  list-style-position: outside;
 }
 
 ul {
@@ -653,6 +653,6 @@ td {
 }
 
 .grid-full main ol {
-  padding-left: var(--space-md);
+  margin-left: var(--space-lg);
 }
 /*# sourceMappingURL=styles.css.map */
