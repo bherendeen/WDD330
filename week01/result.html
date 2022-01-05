@@ -13,35 +13,41 @@
         main {
             display: grid;
             grid-template-columns: 1fr 2fr 1fr;
+            gap: .8em;
             margin-top: 2em;
         }
 
-        h1,
-        form,
-        #story_display {
-            grid-column: 2 / 2;
-            margin-bottom: 1em;
+        main>* {
+            grid-column: 2/3;
         }
 
-        label,
-        input,
-        button,
-        textarea {
-            margin-bottom: 1em;
+        input {
+            margin-left: .8em;
         }
 
         button {
-            margin-right: .5em;
-            padding: .5em;
+            margin-right: .8em;
+            padding: .6em;
+            border: 1px solid rgb(170, 170, 170);
+            background-color: rgb(204, 204, 204);
+            color: rgb(33, 33, 33);
+            transition: all .2s;
+            border-radius: 2px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            border: 1px solid rgb(140, 140, 140);
+            background-color: rgb(170, 170, 170);
+            color: rgb(33, 33, 33);
         }
 
         textarea {
             width: 100%;
             min-height: 250px;
-            background-color: rgb(255, 255, 255);
-            border: 1px solid rgb(204, 204, 204);
+            background-color: rgba(255, 255, 255, 1);
             resize: vertical;
-            overflow: auto;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -49,36 +55,35 @@
 <body>
     <main>
         <h1>Story Editor</h1>
-        <form>
-            <label for="name_input">Story Name:</label>
-            <input type="text" id="name_input" name="name_input"></input>
-            <section>
-                <button onclick="loadStory()">Find and Edit It</button>
-                <button onclick="saveStory()">Save It</button>
-                <button onclick="displayStory()">Display It</button>
-            </section>
-            <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
-        </form>
+        <div>
+            Story Name:</label><input id='name_input'></input>
+        </div>
+        <section>
+            <button onclick="loadStory()">Find and Edit It</button>
+            <button onclick="saveStory()">Save It</button>
+            <button onclick="displayStory()">Display It</button>
+        </section>
+        <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
         <section id="story_display"></section>
     </main>
 
     <script>
         function loadStory() {
-            var storyName = document.getElementById('name_input').value;
-            var storyHTML = localStorage.getItem('storyName');
-            document.getElementById('story_editor').value = storyHTML;
+            var storyName = document.getElementById('name_input').value
+            var storyHTML = localStorage.getItem('storyName')
+            document.getElementById('story_editor').value = storyHTML
         }
 
         function saveStory() {
-            var storyName = document.getElementById('name_input').value;
-            var storyHTML = document.getElementById('story_editor').value;
-            localStorage.setItem('storyName', 'storyHTML');
+            var storyName = document.getElementById('name_input').value
+            var storyHTML = document.getElementById('story_editor').value
+            localStorage.setItem('storyName', 'storyHTML')
         }
 
         function displayStory() {
+            var storyHTML = document.getElementById('story_editor').value
+            document.getElementById('story_display').innerHTML = storyHTML
 
-            var storyHTML = document.getElementById('story_editor').value;
-            document.getElementById('story_display').innerHTML = storyHTML;
         }
     </script>
 </body>
