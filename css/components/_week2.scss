@@ -1,0 +1,41 @@
+.week2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: .8em;
+
+    div {
+        grid-column: 2/3;
+        padding: var(--space-lg) var(--space-md);
+    }
+
+    div h1,
+    p {
+        margin-bottom: var(--space-xs);
+    }
+
+    h2 {
+        margin-bottom: var(--space-md);
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-md);
+        margin: var(--space-md) 0;
+
+        label,
+        input,
+        #multiResults {
+            grid-column: span 2;
+        }
+
+        button &:nth-child(1),
+        &:nth-child(2) {
+            grid-column: span 1;
+        }
+    }
+}
+
+#multiResults {
+    font-size: var(--text-xl);
+}

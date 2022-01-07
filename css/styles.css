@@ -766,6 +766,12 @@ td {
   padding: var(--space-lg);
 }
 
+.grid-full main h1,
+.grid-full main h2,
+.grid-full main h3 {
+  margin-top: var(--space-md);
+}
+
 .grid-full main p {
   padding: var(--space-md) 0 var(--space-md) 0;
 }
@@ -817,5 +823,52 @@ td {
   display: block;
   padding: var(--space-md);
   overflow-x: auto;
+}
+
+.week2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
+  gap: .8em;
+}
+
+.week2 div {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.week2 div h1,
+.week2 p {
+  margin-bottom: var(--space-xs);
+}
+
+.week2 h2 {
+  margin-bottom: var(--space-md);
+}
+
+.week2 section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin: var(--space-md) 0;
+}
+
+.week2 section label,
+.week2 section input,
+.week2 section #multiResults {
+  grid-column: span 2;
+}
+
+button .week2 section:nth-child(1), .week2 section:nth-child(2) {
+  grid-column: span 1;
+}
+
+#multiResults {
+  font-size: var(--text-xl);
 }
 /*# sourceMappingURL=styles.css.map */

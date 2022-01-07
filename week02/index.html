@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>WDD330 - Week 02 | Benjamin Herendeen</title>
+</head>
+
+<body>
+    <div class="grid-full">
+        <header class="main-header">
+            <h1>WDD330 | Week 02</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Questions</h2>
+
+            </section>
+            <section>
+                <h2>Notes</h2>
+
+            </section>
+            <section>
+                <h2>Code Example</h2>
+                <h3>HTML</h3>
+                <pre class="code-snippet"><code>
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="stylesheet" href="../css/styles.css"&gt;
+    &lt;title&gt;WDD330 - Week 02 | Code Results&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;main&gt;
+        &lt;div&gt;
+            &lt;h1&gt;Multiplication Calculator&lt;/h1&gt;
+            &lt;h2&gt;Enter two numbers to multiply&lt;/h2&gt;
+            &lt;p&gt;Enter the numbers you would like to multiply.&lt;/p&gt;
+            &lt;hr&gt;
+            &lt;section&gt;
+                &lt;label for="multiplier"&gt;Multiplier&lt;/label&gt;
+                &lt;input id="multiplier" name="multiplier"&gt;
+                &lt;label for="numResults"&gt;Number of Results&lt;/label&gt;
+                &lt;input id="numResults" name="numResults"&gt;
+                &lt;button class="btn btn--primary" onclick="multiply()"&gt;Results&lt;/button&gt;
+                &lt;div id="multiResults"&gt;&lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+    &lt;script src="../js/week2.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+</code></pre>
+                <h3>SCSS</h3>
+                <pre class="code-snippet"><code>
+.week2 &lbrace;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: .8em;
+
+  div &lbrace;
+    grid-column: 2/3;
+    padding: var(--space-lg) var(--space-md);
+  &rbrace;
+
+  div h1,
+  p &lbrace;
+  margin-bottom: var(--space-xs);
+  &rbrace;
+
+  h2 &lbrace;
+    margin-bottom: var(--space-md);
+  &rbrace;
+
+  section &lbrace;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    margin: var(--space-md) 0;
+
+      label,
+      input,
+      #multiResults &lbrace;
+        grid-column: span 2;
+      &rbrace;
+
+      button &:nth-child(1),
+      &:nth-child(2) &lbrace;
+        grid-column: span 1;
+      &rbrace;
+  &rbrace;
+&rbrace;
+
+#multiResults &lbrace;
+  font-size: var(--text-xl);
+&rbrace;
+</code></pre>
+                <h3>JavaScript</h3>
+                <pre class="code-snippet"><code>
+function multiply() &lbrace;
+  let multiArray = [];
+  let multiOf = document.getElementById('multiplier').value;
+  let multiAmount = document.getElementById('numResults').value;
+
+  if (multiOf.match(/^-?\d+(\.[0-9]&lbrace;1,&rbrace;)?$/g) && multiAmount.match(/^-?\d+(\.[0-9]&lbrace;1,&rbrace;)?$/g)) &lbrace;
+  let numOneConvert = parseFloat(multiOf);
+  let numTwoConvert = parseFloat(multiAmount);
+
+  let multiplied = "";
+  for (let i = 0; i &lt;= (numTwoConvert - 1); i++) &lbrace;
+      multiArray[i]=i; 
+      multiplied +=`$&lbrace;numOneConvert&rbrace; x $&lbrace;i&rbrace;=$&lbrace;numOneConvert * multiArray[i]&rbrace;&lt;br&gt;`;
+      document.getElementById('multiResults').innerHTML = multiplied;
+      &rbrace;
+    &rbrace; else &lbrace;
+    document.getElementById('multiResults').innerHTML = `Please enter a valid number.`;
+    &rbrace;
+&rbrace;;
+</code></pre>
+
+                <a href="result.html"><button class="btn btn--primary">Test Code</button></a>
+            </section>
+        </main>
+    </div>
+    <script src="../js/week2.js"></script>
+</body>
+
+</html>
