@@ -937,7 +937,6 @@ button .week2 section:nth-child(1), .week2 section:nth-child(2) {
 
 @media screen and (min-width: 758px) {
   .week3 h1 {
-    margin-bottom: var(--space-xs);
     font-size: var(--text-xxxl);
   }
   .week3 p {
