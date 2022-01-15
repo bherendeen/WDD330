@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>WDD330 - Week 03 | Benjamin Herendeen</title>
+</head>
+
+<body>
+    <div class="grid-full">
+        <header class="main-header">
+            <h1>WDD330 | Week 02</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Questions</h2>
+                <p>N/A</p>
+            </section>
+            <section>
+                <h2>Notes</h2>
+                <p>N/A</p>
+            </section>
+            <section>
+                <h2>Code Example</h2>
+                <h3>HTML</h3>
+                <pre class="code-snippet"><code>
+&lt;!doctype html&gt;&lt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="stylesheet" href="../css/styles.css"&gt;
+    &lt;title&gt;WDD330 - Week 03 | Code Results&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;main class="week3"&gt;
+        &lt;div&gt;
+            &lt;h1&gt;Most Annoying Button&lt;/h1&gt;
+            &lt;p&gt;Try and click on the button if you can...&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;button class="btn btn--primary"&gt;TRY AND CLICK ME&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+    &lt;script src="../js/week3.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+                <h3>SCSS</h3>
+                <pre class="code-snippet"><code>
+.week3 {
+    display: grid;
+    grid-template-columns: minmax(0, 100%);
+    grid-template-rows: 20vh 80vh;
+
+    div {
+        grid-column: 1;
+
+
+        &:first-child {
+            grid-row: 1;
+            padding: var(--component-padding);
+            background-color: var(--color-contrast-low);
+        }
+
+        &:last-child {
+            grid-row: 2;
+        }
+    }
+
+    h1 {
+        margin-bottom: var(--space-xs);
+        font-size: var(--text-lg);
+    }
+
+    h1,
+    p {
+        text-align: center;
+    }
+
+    p {
+        font-size: var(--text-sm);
+    }
+
+    button {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media screen and (min-width: 758px) {
+    .week3 {
+
+        h1 {
+            margin-bottom: var(--space-xs);
+            font-size: var(--text-xxxl);
+        }
+
+        p {
+            font-size: var(--text-md);
+        }
+    }
+
+}
+</code></pre>
+                <h3>JavaScript</h3>
+                <pre class="code-snippet"><code>
+const screenClicks = document.querySelector('body');
+const btn = document.querySelector('button');
+const moveArea = document.querySelector('div:last-child');
+
+btn.addEventListener('mouseover', function () {
+    const height = Math.floor(Math.random() * (moveArea.clientHeight - btn.clientHeight));
+    const width = Math.floor(Math.random() * (moveArea.clientWidth - btn.clientWidth));
+
+    btn.style.left = `${width}px`;
+    btn.style.top = `${height}px`;
+
+});
+
+btn.addEventListener('click', function () {
+    btn.innerText = "YOU GOT ME!";
+    document.body.style.backgroundColor = 'rgb(136, 197, 89)';
+});
+
+let clicks = 0;
+screenClicks.addEventListener('mousedown', function () {
+    clicks += 1;
+    if (clicks >= 30) {
+        document.querySelector('p').innerText = `Hint: To catch the button, try resizing the browser window to be smaller.`;
+        document.querySelector('p').style.color = 'rgb(209, 160, 0)';
+    }
+});
+
+</code></pre>
+
+                <a href="result.html"><button class="btn btn--primary">Test Code</button></a>
+            </section>
+        </main>
+    </div>
+    <script src="../js/week3.js"></script>
+</body>
+
+</html>

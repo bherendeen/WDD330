@@ -1,0 +1,55 @@
+.week3 {
+    display: grid;
+    grid-template-columns: minmax(0, 100%);
+    grid-template-rows: 20vh 80vh;
+
+    div {
+        grid-column: 1;
+
+
+        &:first-child {
+            grid-row: 1;
+            padding: var(--component-padding);
+            background-color: var(--color-contrast-low);
+        }
+
+        &:last-child {
+            grid-row: 2;
+        }
+    }
+
+    h1 {
+        margin-bottom: var(--space-xs);
+        font-size: var(--text-lg);
+    }
+
+    h1,
+    p {
+        text-align: center;
+    }
+
+    p {
+        font-size: var(--text-sm);
+    }
+
+    button {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media screen and (min-width: 758px) {
+    .week3 {
+
+        h1 {
+            margin-bottom: var(--space-xs);
+            font-size: var(--text-xxxl);
+        }
+
+        p {
+            font-size: var(--text-md);
+        }
+    }
+
+}
