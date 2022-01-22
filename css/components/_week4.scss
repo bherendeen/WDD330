@@ -1,4 +1,4 @@
-main {
+.week4 {
     display: grid;
     grid-template-columns: 100%;
 
@@ -68,7 +68,7 @@ main {
 }
 
 @media screen and (min-width: 758px) {
-    main {
+    .week4 {
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
 
