@@ -943,4 +943,145 @@ button .week2 section:nth-child(1), .week2 section:nth-child(2) {
     font-size: var(--text-md);
   }
 }
+
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+}
+
+main form {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  margin: var(--space-md) 0;
+  padding: var(--component-padding);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+main form > label,
+main form fieldset {
+  grid-column: span 2;
+}
+
+main form label input[type="text"],
+main form label input[type="password"],
+main form label input[type="number"],
+main form label textarea,
+main form label select {
+  width: 100%;
+  height: auto;
+  border: 0.1em solid var(--color-contrast-medium);
+  border-radius: var(--radius-md);
+  -webkit-border-radius: var(--radius-md);
+  -moz-border-radius: var(--radius-md);
+  -ms-border-radius: var(--radius-md);
+  -o-border-radius: var(--radius-md);
+  padding: var(--space-xs);
+  margin-top: var(--space-xs);
+}
+
+main form fieldset {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: var(--space-xs);
+}
+
+main form fieldset p {
+  grid-column: span 2;
+  font-size: var(--text-md);
+  font-weight: var(--text-medium);
+}
+
+main form fieldset label {
+  grid-column: span 2;
+}
+
+main form fieldset label input[type="checkbox"],
+main form fieldset label input[type="radio"] {
+  width: 1em;
+  height: 1em;
+}
+
+main form button {
+  grid-column: span 1;
+  margin-top: var(--space-md);
+}
+
+.error {
+  background: var(--color-error-lighter);
+  border: var(--color-error) 1px solid;
+  display: none;
+}
+
+@media screen and (min-width: 758px) {
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr;
+  }
+  main form {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    margin: var(--space-md) 0;
+    padding: var(--component-padding);
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+  main form > label,
+  main form fieldset {
+    grid-column: span 2;
+  }
+  main form label input[type="text"],
+  main form label input[type="password"],
+  main form label input[type="number"],
+  main form label textarea,
+  main form label select {
+    width: 100%;
+    height: auto;
+    border: 0.1em solid var(--color-contrast-medium);
+    border-radius: var(--radius-md);
+    -webkit-border-radius: var(--radius-md);
+    -moz-border-radius: var(--radius-md);
+    -ms-border-radius: var(--radius-md);
+    -o-border-radius: var(--radius-md);
+    padding: var(--space-xs);
+    margin-top: var(--space-xs);
+  }
+  main form fieldset {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-xs);
+  }
+  main form fieldset p {
+    grid-column: span 6;
+    font-size: var(--text-md);
+    font-weight: var(--text-medium);
+  }
+  main form fieldset label {
+    grid-column: span 2;
+  }
+  main form fieldset label input[type="checkbox"],
+  main form fieldset label input[type="radio"] {
+    width: 1em;
+    height: 1em;
+  }
+  main form button {
+    grid-column: span 1;
+    margin-top: var(--space-md);
+  }
+}
 /*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Hero Form</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <main>
+        <form id='hero'>
+            <legend>
+                Superhero Build
+            </legend>
+            <label for='heroName'>Your Super Hero Name
+                <input type='text' id='heroName' name='heroName' placeholder=" " maxlength=32>
+            </label>
+            <label for='realName'>Real Name
+                <input type='password' name='realName' id='realName'>
+            </label>
+            <fieldset>
+                <p>Super Powers:</p>
+                <label for='flight'>
+                    <input type='checkbox' id='flight' value='Flight' name='powers'>
+                    Flight
+                </label>
+                <label for='strength'>
+                    <input type='checkbox' id='strength' value='Strength' name='powers'>
+                    Super Strength
+                </label>
+                <label for='speed'>
+                    <input type='checkbox' id='speed' value='Super Speed' name='powers'>
+                    Super Speed
+                </label>
+                <label for='energy'>
+                    <input type='checkbox' id='energy' value='Energy Blasts' name='powers'>
+                    Energy Blasts
+                </label>
+                <label for='telekinesis'>
+                    <input type='checkbox' id='telekinesis' value='Telekinesis' name='powers'>
+                    Telekinesis
+                </label>
+            </fieldset>
+            <fieldset>
+                <p>What type of hero are you?</p>
+                <label for='hero'>
+                    <input type='radio' name='category' value='Hero' id='hero'>
+                    Hero
+                </label>
+                <label for='villain'>
+                    <input type='radio' name='category' value='Villain' id='villain'>
+                    Villain
+                </label>
+                <label for='anti-hero'>
+                    <input type='radio' name='category' value='Antihero' id='anti-hero'>
+                    Anti-Hero
+                </label>
+            </fieldset>
+            <label for='age'>Age
+                <input type='number' id='age' name='age' min=0 step=1></label>
+            <label for='City'>Base of Operations
+                <select name='city' id='city'>
+                    <option value='' selected>Choose a City</option>
+                    <option value='Metropolis'>Metropolis</option>
+                    <option value='Gotham City'>Gotham City</option>
+                    <option value='Keystone City'>Keystone City</option>
+                    <option value='Coast City'>Coast City</option>
+                    <option value='Star City'>Star City</option>
+                </select>
+            </label>
+            <label for='origin'>Origin Story
+                <textarea id='origin' name='origin'></textarea>
+            </label>
+            <button class="btn btn--primary" type='submit'>SUBMIT</button>
+            <button class="btn btn--subtle" type='reset'>CLEAR</button>
+        </form>
+    </main>
+    <script src='../js/week4.js'></script>
+</body>
+
+</html>
