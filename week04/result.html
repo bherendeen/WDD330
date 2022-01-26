@@ -10,9 +10,6 @@
 <body>
     <main class="week4">
         <form id='hero'>
-            <legend>
-                Superhero Build
-            </legend>
             <label for='heroName'>Your Super Hero Name
                 <input type='text' id='heroName' name='heroName' placeholder=" " maxlength=32>
             </label>
@@ -44,22 +41,22 @@
             </fieldset>
             <fieldset>
                 <p>What type of hero are you?</p>
-                <label for='hero'>
-                    <input type='radio' name='category' value='Hero' id='hero'>
+                <label for='heroType'>
+                    <input type='radio' name='category' value='Hero' id='heroType'>
                     Hero
                 </label>
-                <label for='villain'>
-                    <input type='radio' name='category' value='Villain' id='villain'>
+                <label for='villainType'>
+                    <input type='radio' name='category' value='Villain' id='villainType'>
                     Villain
                 </label>
-                <label for='anti-hero'>
-                    <input type='radio' name='category' value='Antihero' id='anti-hero'>
+                <label for='anti-heroType'>
+                    <input type='radio' name='category' value='Antihero' id='anti-heroType'>
                     Anti-Hero
                 </label>
             </fieldset>
             <label for='age'>Age
                 <input type='number' id='age' name='age' min=0 step=1></label>
-            <label for='City'>Base of Operations
+            <label for='city'>Base of Operations
                 <select name='city' id='city'>
                     <option value='' selected>Choose a City</option>
                     <option value='Metropolis'>Metropolis</option>
