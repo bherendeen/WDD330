@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>WDD330 - Week 04 | Benjamin Herendeen</title>
+</head>
+
+<body>
+    <div class="grid-full">
+        <header class="main-header">
+            <h1>WDD330 | Week 04</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Questions</h2>
+                <ol>
+                    <li>The <code>'use strict ';</code> line of code only be used when writing code, then commented
+                        out when
+                        the code is in production? Or does it not matter?</li>
+                    <li>How would you create your own Linting tool specific to your style guide?</li>
+                </ol>
+
+            </section>
+            <section>
+                <h2>Notes</h2>
+
+                <h3>Errors</h3>
+                <p>Errors are usually caused by the following:</p>
+
+                <ul>
+                    <li><strong>System error:</strong> there's a problem with the system or external devices
+                        the program interacts with
+                        that can
+                        cause a system error.</li>
+                    <li><strong>Programmer error:</strong> the program contains incorrect syntax or faulty logic; it
+                        could be as simple as a typo.</li>
+                    <li><strong>User error:</strong> the user has entered data incorrectly, which the program cannot
+                        handle.</li>
+                </ul>
+
+                <h3>Exceptions</h3>
+
+                <p>An exception is an error that produces a return value that can then be used by the program to deal
+                    with the error.</p>
+
+                <p>Exceptions use stack trace, a sequence of functions or method calls leading to the error's point.
+                    It'll work backward to find the original.</p>
+
+                <p>Warnings can occur if there's an error in the code that isn't enough to cause the program to crash.
+                </p>
+
+                <h3>Strict Mode</h3>
+
+                <p>Strict mode produces more exceptions and warnings and prohibits the use of some deprecated
+                    features.</p>
+
+                <p>To use strict mode, enter the string <code>'use strict';</code> on the first line of the JS file or a
+                    per-function basis.</p>
+
+                <h3>Linting</h3>
+
+                <p>JS Linting like JS Lint, JS Hint, and ES Lint can be used to test the quality of JavaScript code
+                    beyond simply using strict mode.</p>
+
+                <p>Linting tools are also helpful in enforcing a programming style guide. This is particularly useful
+                    when working in a team, as it ensures everybody follows the same conventions.</p>
+
+                <h3>Debugging in Browser</h3>
+
+                <ul>
+                    <li><a href="https://developer.chrome.com/docs/devtools/javascript/breakpoints/" target="_blank"
+                            rel="noopener noreferrer nofollow">Chrome</a> </li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Debugger" target="_blank"
+                            rel="noopener noreferrer nofollow">FireFox</a> </li>
+                </ul>
+
+                <p>Using the <code>debugger;</code> keyword will create a breakpoint in your code that will pause the
+                    execution of the code and allow you to see where the program is currently doing. You can also hover
+                    over any variables to see what value they hold at that point. The program can then be restarted by
+                    clicking on the 'play' button.</p>
+
+                <p><span>👆</span> Remember to remove or comment out the <code>//debugger;</code> code before code
+                    production.
+                </p>
+
+                <h3>Error Objects</h3>
+
+                <ul>
+                    <li><code>EvalError</code> is not used in the current ECMAScript specification and only retained for
+                        backward compatibility. It was used to identify errors when using the global <code>eval()</code>
+                        function.</li>
+                    <li><code>RangeError</code> is thrown when a number is outside an allowable range of values.</li>
+                    <li><code>ReferenceError</code> is thrown when a reference is made to an item that doesn't exist.
+                        For example, calling a function that hasn't been defined.</li>
+                    <li><code>SyntaxError</code> is thrown when there's an error in the code's syntax.</li>
+                    <li><code>TypeError</code> is thrown when there's an error in the type of value used; for example, a
+                        string is used when a number is expected.</li>
+                    <li><code>URIError</code> is thrown when there's a problem encoding or decoding the URI.</li>
+                    <li><code>InternalError</code> is a non-standard error that is thrown when an error occurs in the
+                        JavaScript engine—a common cause of this too much recursion.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Code Example</h2>
+                <h3>HTML</h3>
+                <pre class="code-snippet"><code>
+
+</code></pre>
+                <h3>SCSS</h3>
+                <pre class="code-snippet"><code>
+
+</code></pre>
+                <h3>JavaScript</h3>
+                <pre class="code-snippet"><code>
+
+</code></pre>
+
+                <!--<a href="#"><button class="btn btn--primary">Test Code</button></a>-->
+            </section>
+        </main>
+    </div>
+    <script src="../js/week4.js"></script>
+</body>
+
+</html>

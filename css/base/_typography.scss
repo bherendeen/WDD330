@@ -216,7 +216,18 @@ ol li {
 
 ul,
 ol {
-    list-style-position: outside;
+    margin: var(--space-md) 0;
+}
+
+ul,
+ol {
+    list-style-position: inside;
+
+    ul,
+    ol {
+        padding-left: 1em;
+        margin-bottom: 0;
+    }
 }
 
 ul {
