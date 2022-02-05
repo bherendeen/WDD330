@@ -16,6 +16,7 @@ body {
         grid-template-rows: 150px 1fr;
         width: 100%;
         min-height: 100vh;
+        background-color: var(--color-white);
     }
 }
 
@@ -172,7 +173,6 @@ button {
             margin: 1.8em;
             width: 600px;
             min-height: 600px;
-            background-color: var(--color-white);
             box-shadow: var(--shadow-md);
         }
     }
