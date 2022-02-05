@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos</title>
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="font-icons/css/icons.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <header>
+                <h1>Todos</h1>
+            </header>
+            <main>
+                <div class="todoContainer">
+                    <ul class="todoList">
+
+                    </ul>
+                </div>
+                <form>
+                    <input type="text" class="todoInput">
+                    <button class="add" type="submit" title="Add task">
+                        <i class="icon icon-add"></i>
+                    </button>
+                    <p id="results"></p>
+                    <select name="filter" class="filter">
+                        <option value="all">All</option>
+                        <option value="completed">Competed</option>
+                        <option value="incomplete">Incomplete</option>
+                    </select>
+                </form>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

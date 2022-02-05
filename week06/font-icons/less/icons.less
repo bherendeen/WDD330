@@ -1,0 +1,129 @@
+/* --------------------------------
+
+todo Web Font
+Generated using nucleoapp.com
+
+-------------------------------- */
+@icon-font-path: "../fonts";
+
+@font-face {
+  font-family: 'todo';
+  src: url('@{icon-font-path}/todo.eot');
+  src: url('@{icon-font-path}/todo.eot') format('embedded-opentype'),
+    url('@{icon-font-path}/todo.woff2') format('woff2'),
+    url('@{icon-font-path}/todo.woff') format('woff'),
+    url('@{icon-font-path}/todo.ttf') format('truetype'),
+    url('@{icon-font-path}/todo.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*------------------------
+	base class definition
+-------------------------*/
+
+.icon {
+  display: inline-block;
+  font: normal normal normal 1em/1 'todo';
+  color: inherit;
+  flex-shrink: 0;
+  speak: none;
+  text-transform: none;
+  /* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*------------------------
+  change icon size
+-------------------------*/
+
+/* relative units */
+.icon-sm {
+	font-size: 0.8em;
+}
+.icon-lg {
+  font-size: 1.2em;
+}
+/* absolute units */
+.icon-16 {
+  font-size: 16px;
+}
+.icon-32 {
+  font-size: 32px;
+}
+
+/*------------------------
+  spinning icons
+-------------------------*/
+
+.icon-is-spinning {
+  animation: icon-spin 1s infinite linear;
+}
+
+@keyframes icon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*------------------------
+  rotated/flipped icons
+-------------------------*/
+
+.icon-rotate-90  {
+	transform: rotate(90deg);
+}
+
+.icon-rotate-180 {
+	transform: rotate(180deg);
+}
+
+.icon-rotate-270 {
+	transform: rotate(270deg);
+}
+
+.icon-flip-y {
+	transform: scaleY(-1);
+}
+.icon-flip-x {
+	transform: scaleX(-1);
+}
+
+/*------------------------
+	icons
+-------------------------*/
+@icon-bullet-list-69: "\ea02";
+@icon-check-list: "\ea03";
+@icon-survey: "\ea04";
+@icon-e-add: "\ea05";
+@icon-bin: "\ea06";
+@icon-bin-1: "\ea07";
+
+.icon-bullet-list-69::before {
+  content: @icon-bullet-list-69;
+}
+
+.icon-check-list::before {
+  content: @icon-check-list;
+}
+
+.icon-survey::before {
+  content: @icon-survey;
+}
+
+.icon-e-add::before {
+  content: @icon-e-add;
+}
+
+.icon-bin::before {
+  content: @icon-bin;
+}
+
+.icon-bin-1::before {
+  content: @icon-bin-1;
+}
+
