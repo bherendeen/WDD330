@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/styles.min.css">
+    <title>WDD330 - Week 07 | Benjamin Herendeen</title>
+</head>
+
+<body>
+    <div class="grid-full">
+        <header class="main-header">
+            <h1>WDD330 | Week 07</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Questions</h2>
+                <p>N/A</p>
+            </section>
+            <section>
+                <h2>Notes</h2>
+                <p>N/A</p>
+            </section>
+            <section>
+                <h2>Code Example</h2>
+                <h3>HTML</h3>
+                <pre class="code-snippet"><code>
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset='utf-8'&gt;
+    &lt;title&gt;Ajax Example&lt;/title&gt;
+    &lt;link rel="stylesheet" href="../css/styles.min.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;main&gt;
+        &lt;button class="btn btn--primary" id='number'&gt;Number Fact&lt;/button&gt;
+        &lt;button class="btn btn--primary" id='chuck'&gt;Chuck Norris Fact&lt;/button&gt;
+        &lt;div id='output'&gt;
+            Ajax response will appear here
+        &lt;/div&gt;
+    &lt;/main&gt;
+    &lt;script src='../js/week7.js'&gt;&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+</code></pre>
+                <h3>SCSS</h3>
+                <pre class="code-snippet"><code>
+</code></pre>
+                <h3>JavaScript</h3>
+                <pre class="code-snippet"><code>
+// Assign btn and output div to variables 
+const textButton = document.getElementById('number');
+const apiButton = document.getElementById('chuck');
+const outputDiv = document.getElementById('output');
+
+// Assign URL's to variables 
+const textURL = 'http://numbersapi.com/random';
+const apiURL = 'https://api.chucknorris.io/jokes/random';
+
+// Event handlers for numbers
+textButton.addEventListener('click', () => {
+    fetch(textURL)
+        .then(response => {
+            outputDiv.innerHTML = 'Waiting for response...';
+            if (response.ok) {
+                return response;
+            }
+            throw Error(response.statusText);
+        })
+        .then(response => response.text())
+        .then(text => outputDiv.innerText = text)
+        .catch(error => console.log('There was an error:', error))
+}, false);
+
+// Event handlers for Chucky
+apiButton.addEventListener('click', () => {
+    fetch(apiURL)
+        .then(response => {
+            outputDiv.innerHTML = 'Waiting for response...';
+            if (response.ok) {
+                return response;
+            }
+            throw Error(response.statusText);
+        })
+        .then(response => response.json())
+        .then(data => outputDiv.innerText = data.value)
+        .catch(error => console.log('There was an error:', error))
+
+    badLang();
+
+}, false);
+
+// Check for bad language 
+function badLang() {
+    setTimeout(() => {
+        const phrase = document.getElementById('output').textContent;
+        console.log(phrase);
+        const phraseArr = phrase.split(" ");
+        phraseArr.forEach(n => {
+            if (n.includes("ass" || "bitch" || "shit" || "fuck" || "sex" || "jizz" || "bastard" || "blowjob" || "pussy" || "dick" || "penis" || "cock")) {
+                document.getElementById('output').innerText = "Bad language use. Sorry, click the button again.";
+            }
+        })
+    }, 1000);
+}
+
+</code></pre>
+                <p>Added a check for bad language as well. It's not perfect, but it will take out a percentage of bad
+                    jokes, which is better than nothing. I have all phrases print to the console for comperison.</p>
+
+                <a href="result.html"><button class="btn btn--primary">Test Code</button></a>
+            </section>
+        </main>
+    </div>
+    <script src="../js/week7.js"></script>
+</body>
+
+</html>
