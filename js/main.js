@@ -22,6 +22,9 @@
         {
             label: "Week06",
             url: "week06/"
+        } {
+            label: "Week07",
+            url: "week07/"
         }
     ];
 
