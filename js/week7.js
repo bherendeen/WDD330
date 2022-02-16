@@ -39,17 +39,3 @@ apiButton.addEventListener('click', () => {
     badLang();
 
 }, false);
-
-// Check for bad language 
-function badLang() {
-    setTimeout(() => {
-        const phrase = document.getElementById('output').textContent;
-        console.log(phrase);
-        const phraseArr = phrase.split(" ");
-        phraseArr.forEach(n => {
-            if (n.includes("ass" || "bitch" || "shit" || "fuck" || "sex" || "jizz" || "the" || "bastard" || "blowjob" || "pussy" || "dick" || "penis" || "cock")) {
-                document.getElementById('output').innerText = "Bad language use. Sorry, click the button again.";
-            }
-        })
-    }, 1000);
-}
