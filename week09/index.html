@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/styles.min.css">
+    <title>WDD330 - Week 09 | Benjamin Herendeen</title>
+</head>
+
+<body>
+    <div class="grid-full">
+        <header class="main-header">
+            <h1>WDD330 | Week 09</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Questions</h2>
+                <p>N/A</p>
+            </section>
+            <section>
+                <h2>Notes</h2>
+                <p>N/A</p>
+            </section>
+            <section>
+                <h2>Code Example</h2>
+                <h3>HTML</h3>
+                <pre class="code-snippet"><code>
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Coming Soon | Countdown&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/styles.min.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;secton class="comingSoon"&gt;
+        &lt;div&gt;
+            &lt;h1&gt;4&lt;sup&gt;th&lt;/sup&gt; of July &lt;span&gt; | &lt;/span&gt; 2022&lt;/h1&gt;
+            &lt;h2&gt; - countdown -&lt;/h2&gt;
+            &lt;div class="countDown"&gt;
+                &lt;div class="container"&gt;
+                    &lt;div class="day"&gt;Time&lt;/div&gt;
+                    &lt;h3&gt;Day&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class="container"&gt;
+                    &lt;div class="hour"&gt;Time&lt;/div&gt;
+                    &lt;h3&gt;Hour&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class="container"&gt;
+                    &lt;div class="minute"&gt;Time&lt;/div&gt;
+                    &lt;h3&gt;Minute&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class="container"&gt;
+                    &lt;div class="second"&gt;Time&lt;/div&gt;
+                    &lt;h3&gt;Second&lt;/h3&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;img src="img/july-4.svg" alt="USA Independence Day - July 4, 1776"&gt;
+        &lt;/div&gt;
+    &lt;/secton&gt;
+
+    &lt;script src="js/week9.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+</code></pre>
+                <h3>SCSS</h3>
+                <pre class="code-snippet"><code>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    background-color: #dfded3;
+}
+
+.comingSoon {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    >div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        sup {
+            font-size: 1.8rem;
+            font-weight: 300;
+        }
+
+        span {
+            font-weight: 300;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .countDown {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        text-align: center;
+
+        .container {
+            margin: 2.5rem;
+
+            .day,
+            .hour,
+            .minute,
+            .second {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+
+        }
+    }
+
+    img {
+        width: 300px;
+        height: auto;
+        margin-top: 2rem;
+    }
+
+    .red {
+        color: rgb(170, 43, 40);
+    }
+}
+</code></pre>
+                <h3>JavaScript</h3>
+                <pre class="code-snippet"><code>
+const countDown = () => {
+    const countDate = new Date('July , 2022 00:00:00').getTime();
+    const currentDate = new Date().getTime();
+    const dateDiff = countDate - currentDate;
+
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+
+    const textDay = Math.floor(dateDiff / day);
+    const textHour = Math.floor((dateDiff % day) / hour);
+    const textMinute = Math.floor((dateDiff % hour) / minute);
+    const textSecond = Math.floor((dateDiff % minute) / second);
+
+    document.querySelector('.day').innerText = textDay;
+    document.querySelector('.hour').innerText = textHour;
+    document.querySelector('.minute').innerText = textMinute;
+    document.querySelector('.second').innerText = textSecond;
+
+    if (dateDiff <= 60000) {
+        //changeColor();
+        clearInterval(time);
+    }
+}
+
+const time = setInterval(countDown, 1000);
+
+function changeColor() {
+    let day = document.querySelector('.day');
+    let hour = document.querySelector('.hour');
+    let minute = document.querySelector('.minute');
+    let second = document.querySelector('.second');
+
+    day.classList.add('red');
+    hour.classList.add('red');
+    minute.classList.add('red');
+    second.classList.add('red');
+}
+</code></pre>
+                <a href="result.html"><button class="btn btn--primary">Test Code</button></a>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

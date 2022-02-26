@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kids Space Site Proposal, data sources for Benjamin Herendeen in WDD 330: Web Frontend Development at
+        Brigham Young University - Idaho">
+    <title>Kids Space Site Proposal | Data Sources / Features</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="component-padding">
+                <img class="logo" src="img/logo.svg" alt="Kids Space Learning Logo">
+                <!--site plan title-->
+            </div>
+            <nav>
+                <ul class="flex">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="target-audience.html">Audience</a></li>
+                    <li><a class="active" href="data-sources.html">Data Sources</a></li>
+                    <li><a href="color-scheme.html">Color</a></li>
+                    <li><a href="typography.html">Type</a></li>
+                    <li><a href="wireframe.html">wireframe</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="grid component-padding">
+            <h1>Site Plan - Data Sources / Features</h1>
+            <article class="grid grid-gap-article">
+                <h2>Building the site</h2>
+                <div class="article-col">
+                    <p>HTML, SASS (CSS), and Javascript will be used to create the site. Responsive design will also be
+                        included.</p>
+                </div>
+                <h2>API</h2>
+                <div class="article-col">
+                    <p>The Solar System OpenData API will be the source of obtaining the information needed for the
+                        planets and other various aspects.</p>
+                    <p>The possible use of API's from NASA.gov could be used.</p>
+                </div>
+                <h2>Local Storage</h2>
+                <div class="article-col">
+                    <p>Local storage will be used t in the development of light and dark modes. This preference will be
+                        saved in local storage to remember the end-users wish to view the site in light or dark modes
+                        regardless of whether the user refreshes the browsers and returns to the site later. Colors will
+                        automatically adjust for preferences used.</p>
+                </div>
+                <h2>CSS Animations and Transitions</h2>
+                <div class="article-col">
+                    <p>CSS animations and transitions will be used throughout the site to increase the visual aspect and
+                        keep children engaged, wanting to learn more, and exploring the planets around them.</p>
+                </div>
+                <h2>Javascript Events</h2>
+                <div class="article-col">
+                    <p>Events will help with the interactions between the children and the site. They'll be able to
+                        select the planets they would like to learn more about and interact with a built-in calculator.
+                        The calculator will be a feature to check out how much they would weigh if they were on a
+                        particular planet.</p>
+                </div>
+                <h2>Javascript Animations</h2>
+                <div class="article-col">
+                    <p>Some animations will be achieved through Javascript Animations using GSAP.js. This is a
+                        desire to push me since I just came across it and would like to incorporate it into the site.
+                    </p>
+                </div>
+            </article>
+        </main>
+        <footer>
+            <div class="flex component-padding">
+                <p>&copy; <span id="year"></span> | Benjamin Herendeen
+                </p>
+                <p>Last updated: <span id="lastModified"></span></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/date.js"></script>
+</body>
+
+</html>

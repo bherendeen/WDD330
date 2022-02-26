@@ -30,6 +30,14 @@
         {
             label: "Week08",
             url: "week08/"
+        },
+        {
+            label: "Week09",
+            url: "week09/"
+        },
+        {
+            label: "Proposal",
+            url: "proposal/"
         }
     ];
 
