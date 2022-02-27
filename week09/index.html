@@ -16,11 +16,11 @@
         <main>
             <section>
                 <h2>Questions</h2>
-                <p>I use a setInterval in my example. How would you use clearInterval when the time hits zero? I tried a
-                    <code>if(dateDiff < 1000) { clearInterval(); }</code>. This is where it ends...</p> </section>
-                            <section>
-                            <h2>Notes</h2>
-                            <p>N/A</p>
+                <p>N/A</p>
+            </section>
+            <section>
+                <h2>Notes</h2>
+                <p>N/A</p>
             </section>
             <section>
                 <h2>Code Example</h2>
@@ -158,7 +158,10 @@ html {
                 <h3>JavaScript</h3>
                 <pre class="code-snippet"><code>
 const countDown = () => {
-    const countDate = new Date('July , 2022 00:00:00').getTime();
+    const site = 'https://www.nike.com/';
+    const date = 'Jul 04, 2022'; // format: MMM DD, YYYY
+    const endTime = '00:00:00'; // 24-hour | format: HH:MM:SS
+    const countDate = new Date(`${date} ${endTime}`).getTime();
     const currentDate = new Date().getTime();
     const dateDiff = countDate - currentDate;
 
@@ -177,9 +180,11 @@ const countDown = () => {
     document.querySelector('.minute').innerText = textMinute;
     document.querySelector('.second').innerText = textSecond;
 
-    if (dateDiff <= 60000) {
-        //changeColor();
+    if (dateDiff <= 60000 && dateDiff > 1000) {
+        changeColor();
+    } else if (dateDiff < 1000) {
         clearInterval(time);
+        window.location.href = `${site}`;
     }
 }
 

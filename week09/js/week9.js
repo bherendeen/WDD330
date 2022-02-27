@@ -1,5 +1,8 @@
 const countDown = () => {
-    const countDate = new Date('July , 2022 00:00:00').getTime();
+    const site = 'https://www.nike.com/';
+    const date = 'Jul 04, 2022'; // format: MMM DD, YYYY
+    const endTime = '11:03:00'; // 24-hour | format: HH:MM:SS
+    const countDate = new Date(`${date} ${endTime}`).getTime();
     const currentDate = new Date().getTime();
     const dateDiff = countDate - currentDate;
 
@@ -18,9 +21,11 @@ const countDown = () => {
     document.querySelector('.minute').innerText = textMinute;
     document.querySelector('.second').innerText = textSecond;
 
-    if (dateDiff <= 60000) {
-        //changeColor();
+    if (dateDiff <= 60000 && dateDiff > 1000) {
+        changeColor();
+    } else if (dateDiff < 1000) {
         clearInterval(time);
+        window.location.href = `${site}`;
     }
 }
 
