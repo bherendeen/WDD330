@@ -1,0 +1,31 @@
+.section {
+    position: relative;
+    left: 0;
+    width: 100%;
+    background: var(--color-bg);
+    transition: var(--tran-05);
+}
+
+.section .text {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--color-contrast-high);
+}
+
+.sidebar.close .section {
+    left: 0;
+    width: 100%;
+    padding: 0;
+}
+
+@media screen and (min-width: 48rem) {
+    .section {
+        left: 86px;
+        width: calc(100% - 86px);
+    }
+
+    .sidebar.close .section {
+        left: 78px;
+        width: calc(100% - 78px);
+    }
+}

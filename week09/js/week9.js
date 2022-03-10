@@ -1,7 +1,7 @@
 const countDown = () => {
     const site = 'https://www.nike.com/';
     const date = 'Jul 04, 2022'; // format: MMM DD, YYYY
-    const endTime = '11:03:00'; // 24-hour | format: HH:MM:SS
+    const endTime = '00:00:00'; // 24-hour | format: HH:MM:SS
     const countDate = new Date(`${date} ${endTime}`).getTime();
     const currentDate = new Date().getTime();
     const dateDiff = countDate - currentDate;

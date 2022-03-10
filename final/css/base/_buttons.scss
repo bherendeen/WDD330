@@ -1,0 +1,88 @@
+:root {
+    // style affecting all buttons
+    --btn-padding-y: --space-xxs; // padding top/bottom
+    --btn-padding-x: --space-sm; // padding left/right
+    --btn-radius: 0.25em; // border radius
+    --btn-font-size: 1em; // font size  
+}
+
+
+.btn {
+    // basic button style
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    text-decoration: none;
+    line-height: 1.2;
+    font-size: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border-radius: var(--btn-radius);
+    box-shadow: var(--shadow-xs);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: .2s;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: var(--shadow-sm);
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        transform: translateY(2px);
+    }
+}
+
+// themes
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+
+    &:hover {
+        background-color: var(--color-primary-dark);
+    }
+}
+
+.btn-subtle {
+    background-color: var(--color-contrast-lower);
+    color: var(--color-contrast-higher);
+}
+
+.btn-accent {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+
+    &:hover {
+        background-color: var(--color-accent-dark);
+    }
+
+    &:focus {
+        box-shadow: var(--shadow-md);
+    }
+}
+
+// default size variations
+.btn-sm {
+    font-size: 0.8em;
+}
+
+.btn-md {
+    font-size: 1.2em;
+}
+
+.btn-lg {
+    font-size: 1.4em;
+}
+
+// button with (only icon
+.btn-icon {
+    padding: 0.5em;
+}

@@ -4,4 +4,5 @@
     --radius-sm: calc(var(--radius)/2);
     --radius-md: var(--radius);
     --radius-lg: calc(var(--radius)*2);
+    --radius-xl: calc(var(--radius-lg * 2));
 }
