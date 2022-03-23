@@ -198,3 +198,76 @@ for (let planet of planets) {
         }
     });
 }
+
+// Solar System API gravity weight
+const api = 'https://api.le-systeme-solaire.net/rest/bodies/';
+
+const planetNames = ['sun', 'mercury', 'venus', 'earth', 'moon', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto'];
+const sunGravity = 274;
+const gravity = [sunGravity];
+const planetWeightsLimit = document.querySelectorAll('.object-weight-info .apiGravity');
+const planetWeightsAll = document.querySelectorAll('.object-weight-info div');
+
+/*
+mercury = 240;
+venus = 244;
+earth = 243;
+moon = 0;
+mars = 239;
+jupiter = 238;
+saturn = 241;
+uranus = 199;
+neptune = 219;
+pluto = 208;
+*/
+const planetNums = [240, 244, 243, 0, 239, 238, 241, 199, 219, 208];
+
+fetch(api)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+
+
+        for (let i = 0; i < planetWeightsLimit.length; i++) {
+
+            // Get data and display //
+            //Gravity on object
+            const gravityNum = data.bodies[planetNums[i]].gravity;
+            gravity.push(gravityNum);
+        }
+    });
+
+const weightInput = document.getElementById('weight');
+
+weightInput.addEventListener('input', () => {
+    let weightInputValue = weightInput.value;
+    const gravityArry = gravity;
+
+    if (weightInputValue === "" || weightInputValue.length > 3) {
+        for (let i = 0; i < planetWeightsAll.length; i++) {
+            const weightOutput = document.querySelector(`.object-weight-info .${planetNames[i]}-weight`);
+
+            weightOutput.innerText = `N/A`;
+        }
+    } else {
+        for (let i = 0; i < planetWeightsAll.length; i++) {
+            const weightOutput = document.querySelector(`.object-weight-info .${planetNames[i]}-weight`);
+
+            const pounds = gravityPound(gravityArry[i], weightInputValue);
+            weightOutput.innerText = `${pounds} lbs`;
+        }
+    }
+});
+
+function gravityPound(g, wgt) {
+    const earthGravity = 9.8;
+    return ((g / earthGravity) * wgt).toLocaleString();
+};
+
+// Footer copyright
+
+const copyright = document.querySelector('.footer-copyright');
+
+const year = new Date().getFullYear();
+copyright.innerHTML = `&copy; ${year} | Space Learning - All Rights Reserved`;

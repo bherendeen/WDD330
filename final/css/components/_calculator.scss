@@ -1,0 +1,233 @@
+.weight-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+}
+
+.weight-info-text {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-lg) 0;
+    margin: var(--space-md) 0;
+    text-align: center;
+}
+
+.weight-info-text h2 {
+    font-size: var(--text-lg);
+    font-weight: var(--text-bold);
+    margin-bottom: var(--space-sm);
+}
+
+.weight-container {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: var(--component-padding);
+    background: var(--color-bg-dark);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+
+    span,
+    div {
+        margin: var(--space-sm) 0;
+    }
+}
+
+.weight-container-input {
+    font-size: var(--text-md);
+    position: relative;
+    height: 60px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.weight-container-input input {
+    width: 100%;
+    height: 100%;
+    color: var(--color-primary);
+    padding-top: var(--space-md);
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.weight-container-input input:focus+.weight-label .weight-input,
+.weight-container-input input:valid+.weight-label .weight-input {
+    transform: translateY(-100%);
+    font-size: var(--text-sm);
+    color: var(--color-primary);
+}
+
+.weight-container-input input:focus+.weight-label::after,
+.weight-container-input input:valid+.weight-label::after {
+    transform: translateX(0%);
+}
+
+
+.weight-container-input label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid var(--color-contrast-high);
+}
+
+.weight-container-input label::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid var(--color-primary);
+    transform: translateX(-100%);
+    transition: transform .3s ease;
+}
+
+.weight-input {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    transition: var(--tran-03);
+}
+
+.object-weight-info {
+    padding: var(--component-padding);
+    background: var(--color-bg-dark);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--space-sm);
+
+    hr {
+        background-color: var(--color-contrast-lower);
+    }
+}
+
+.object-weight-info dl {
+    grid-column: span 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: var(--space-md);
+
+        dt {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: var(--space-md);
+
+            img {
+                max-width: 55px;
+                height: auto;
+                margin-bottom: var(--space-sm);
+            }
+
+            span {
+                font-size: var(--space-md);
+            }
+        }
+
+        dd {
+            font-size: var(--space-lg);
+        }
+
+    }
+}
+
+.object-weight-info span {
+
+    &:last-of-type {
+        font-weight: var(--text-bold);
+    }
+}
+
+@media screen and (min-width: 48rem) {
+
+    .weight-info {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .weight-info-text {
+        grid-column: span 12;
+    }
+
+    .weight-info-text h2 {
+        font-size: var(--text-xxxl);
+    }
+
+    .weight-info-text p {
+        font-size: var(--text-lg);
+    }
+
+    .weight-container {
+        grid-column: span 4;
+    }
+
+    .object-weight-info {
+        grid-column: span 8;
+    }
+
+    .object-weight-info {
+        grid-column: span 8;
+        margin-bottom: 0;
+
+        hr {
+            display: none;
+        }
+    }
+
+    .object-weight-info dl {
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--space-md);
+
+        div {
+            grid-column: span 4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            margin-bottom: 0;
+
+            dt {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                margin-bottom: 0;
+
+                img {
+                    max-width: 35px;
+                    height: auto;
+                    margin-right: var(--space-sm);
+                }
+
+                span {
+                    width: 100%;
+                    height: 100%;
+                    font-size: var(--space-md);
+                }
+            }
+
+            dd {
+                font-size: var(--space-md);
+                margin-left: 48px;
+            }
+
+        }
+    }
+
+}
