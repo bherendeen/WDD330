@@ -44,8 +44,8 @@
             url: "week10/"
         },
         {
-            label: "final",
-            url: "../final/"
+            label: "Final",
+            url: "final/"
         }
     ];
 
