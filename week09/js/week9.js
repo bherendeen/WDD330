@@ -1,6 +1,6 @@
 const countDown = () => {
     const site = 'https://www.nike.com/';
-    const date = 'Jul 04, 2022'; // format: MMM DD, YYYY
+    const date = 'Jul 04, 2023'; // format: MMM DD, YYYY
     const endTime = '00:00:00'; // 24-hour | format: HH:MM:SS
     const countDate = new Date(`${date} ${endTime}`).getTime();
     const currentDate = new Date().getTime();
